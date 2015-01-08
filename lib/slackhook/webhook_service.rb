@@ -4,17 +4,17 @@ require "uri"
 require "restclient"
 require "json"
 
-module Webhook
-  class WebhookService
+module WebhookService
+  class Webhook
     def new(options = {})
       @message = options.fetch(:message, nil)
       @type    = options.fetch(:type, nil)
     end
 
-    def send_hook
+    def send
       host = "https://hooks.slack.com"
-      uri = URI::encode("#{host}/services")
-      @toSend = { text: @message, username: "slackbot", icon_emoji: ":eyes:"}
+      uri = URI::encode("#{host}/services/")
+      @toSend = { text: @message, username: "factubot", icon_emoji: ":eyes:"}
 
       uri = URI.parse(uri)
       https = Net::HTTP.new(uri.host,uri.port)
