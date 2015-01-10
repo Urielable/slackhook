@@ -1,6 +1,6 @@
 # Slackhook
 
-Easily add Slack Webhook integration to your Ruby application.
+Easily add Slack WebHooks integration and send messages from your Ruby application.
 
 ## Installation
 
@@ -12,39 +12,50 @@ gem 'slackhook'
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install slackhook
+```bash
+$ gem install slackhook
+```
 
 ## Usage
 
-Slackhook is a gem for easily implement [Slack webhooks](https://api.slack.com/).
 
-To use this gem you only need the webhook url. You can find this url using your slack account. Please go to [Incoming WebHooks page](https://dvz.slack.com/services/new/incoming-webhook) and select your default channel.
 
-Well, now you are ready \0/!
+To use this gem you only need to configure the Incoming WebHook integration in Slack.
+
+You can find this using your slack account and going to [Incoming WebHooks](https://api.slack.com/) and select your default channel.
+
+Well, now you are ready to send messages to Slack channels \0/!
 
 
 ## Quick start
 
 ```ruby
-# This way is how you send messages to your default channel.
-Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message"})`
+# This is how you send messages to your default channel.
+Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message"})
 ```
-You can use the *channel* option if the message is directed to a non default channel.
 
-There are also *username* (**slackbot** as default) and *icon_type* options to be more specific about the nickname and avatar which would appear on the chat.
+There are also ```username```  and ```icon_type``` (**slackbot** is the default) options to be more specific about the nickname and avatar which would appear on the chat.
+
+You can use the ```channel``` option if the message is goint to be sent to a non default channel.
 
 ```ruby
 > require "slackhook"
-> Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message", channel: "@urielable", username: "nickname for bot", icon_type: ":trollface:"})
+> Slackhook.send_hook({ webhook_url: "your_webhook_url",
+                        text: "test message",
+                        channel: "@your-channel",
+                        username: "testbot",
+                        icon_type: ":trollface:"})
 ```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/slackhook/fork )
+1. [Fork it](https://github.com/Urielable/slackhook/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
