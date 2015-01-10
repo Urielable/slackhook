@@ -1,6 +1,6 @@
 # Slackhook
 
-TODO: Write a gem description
+Easily add Slack Webhook integration to your Ruby application.
 
 ## Installation
 
@@ -20,7 +20,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Slackhook is a gem for easily implement [Slack webhooks](https://api.slack.com/).
+
+To use this gem you only need the webhook url. You can find this url using your slack account. Please go to [Incoming WebHooks page](https://dvz.slack.com/services/new/incoming-webhook) and select your default channel.
+
+Well, now you are ready \0/!
+
+
+## Quick start
+
+```ruby
+# This way is how you send messages to your default channel.
+Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message"})`
+```
+You can use the *channel* option if the message is directed to a non default channel.
+
+There are also *bot* (**slackbot** as default) and *icon_type* options to be more specific about the nickname and avatar which would appear on the chat.
+
+```ruby
+> require "slackhook"
+> Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message", channel: "@urielable", bot: "testbot", icon_type: ":trollface:"})
+```
 
 ## Contributing
 
