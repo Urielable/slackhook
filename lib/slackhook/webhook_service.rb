@@ -24,15 +24,5 @@ module WebhookService
       res           = https.request(req)
       res.code
     end
-
-    def icon_alert type
-      icon_alert = case type
-        when "error" then ":no_entry_sign:"
-        when "ok"    then ":eyes:"
-        when "point" then ":point_up:"
-        else "Unknown"
-      end
-    end
-
   end
 end
