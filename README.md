@@ -35,11 +35,11 @@ Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message"})`
 ```
 You can use the *channel* option if the message is directed to a non default channel.
 
-There are also *bot* (**slackbot** as default) and *icon_type* options to be more specific about the nickname and avatar which would appear on the chat.
+There are also *username* (**slackbot** as default) and *icon_type* options to be more specific about the nickname and avatar which would appear on the chat.
 
 ```ruby
 > require "slackhook"
-> Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message", channel: "@urielable", bot: "testbot", icon_type: ":trollface:"})
+> Slackhook.send_hook({webhook_url: "your_webhook_url", text: "test message", channel: "@urielable", username: "nickname for bot", icon_type: ":trollface:"})
 ```
 
 ## Contributing
