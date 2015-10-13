@@ -52,6 +52,7 @@ You can use the ```channel``` option if the message is goint to be sent to a non
                         username: "testbot",
                         icon_type: ":trollface:"})
 ```
+You can also use `icon_url` instead of `icon_type` if you want to use some additional icon image.
 
 ## Contributing
 
@@ -60,3 +61,8 @@ You can use the ```channel``` option if the message is goint to be sent to a non
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Contributors
+
+- Uriel Molina [urielable](https://github.com/Urielable)
+- Daniel Becker [danielbecker](https://github.com/danielbecker)
